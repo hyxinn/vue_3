@@ -7,9 +7,21 @@
 
 <mapper namespace="org.example.springboot.mapper.EmployeeMapper">
 
+
     <select id="selectAll" resultType="org.example.springboot.entity.Employee">
             select id, name, sex, no, description
             from employee
     </select>
+
+    <insert id="insert" parameterType="org.example.springboot.entity.Employee">
+        insert into employee (id,name, sex, no, description)
+        values (#{id},#{name}, #{sex}, #{no}, #{description})
+    </insert>
+
+    <update id="updateById" parameterType="org.example.springboot.entity.Employee">
+        update employee
+        set  name = #{name}, sex = #{sex}, no = #{no}, description = #{description}
+        where id = #{id}
+    </update>
 
 </mapper>

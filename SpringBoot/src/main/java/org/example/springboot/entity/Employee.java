@@ -8,6 +8,17 @@ public class Employee
     private int no;
     private String description;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", no=" + no +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
     public int getId() {
         return id;
     }
